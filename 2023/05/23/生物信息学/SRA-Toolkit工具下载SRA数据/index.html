@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SRA-Toolkit工具下载SRA数据 | Yezi's Hexo Blog</title><meta name="author" content="Yezi"><meta name="copyright" content="Yezi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="引言高通量的原始数据通常情况下会上传到NCBI的SRA（Sequence Read Archive）数据库。 常见的下载方法有1：  aspera 工具下载 wget, curl命令直接下载 NCBI官方的 SRA Toolkit 进行下载  aspera 工具配置麻烦，直接下载容易出错，所以使用SRA-Toolkit工具下载。(2024年04月27日) SRA-Toolkit工具无断点续传，所以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SRA-Toolkit工具下载SRA数据">
+<meta property="og:url" content="https://yeyeziblog.eu.org/2023/05/23/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE/index.html">
+<meta property="og:site_name" content="Yezi&#39;s Hexo Blog">
+<meta property="og:description" content="引言高通量的原始数据通常情况下会上传到NCBI的SRA（Sequence Read Archive）数据库。 常见的下载方法有1：  aspera 工具下载 wget, curl命令直接下载 NCBI官方的 SRA Toolkit 进行下载  aspera 工具配置麻烦，直接下载容易出错，所以使用SRA-Toolkit工具下载。(2024年04月27日) SRA-Toolkit工具无断点续传，所以">
+<meta property="og:locale">
+<meta property="og:image" content="https://yeyeziblog.eu.org/img/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE_2023-05-24-20-29-20.png">
+<meta property="article:published_time" content="2023-05-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-22T16:00:00.000Z">
+<meta property="article:author" content="Yezi">
+<meta property="article:tag" content="GEO">
+<meta property="article:tag" content="SRA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yeyeziblog.eu.org/img/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE_2023-05-24-20-29-20.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yeyeziblog.eu.org/2023/05/23/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2155310374265743" crossorigin="anonymous"></script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"74HMPRFIN5","apiKey":"896979d16b9d8fcb17ef98c222d6d40a","indexName":"yeziblog","hits":{"per_page":10},"languages":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SRA-Toolkit工具下载SRA数据',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-23 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">152</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">91</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">42</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Yezi's Hexo Blog"><span class="site-name">Yezi's Hexo Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">SRA-Toolkit工具下载SRA数据</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-05-22T16:00:00.000Z" title="Created 2023-05-23 00:00:00">2023-05-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-05-22T16:00:00.000Z" title="Updated 2023-05-23 00:00:00">2023-05-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">生物信息学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SRA-Toolkit工具下载SRA数据"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>高通量的原始数据通常情况下会上传到<code>NCBI</code>的<code>SRA</code>（<code>Sequence Read Archive</code>）数据库。</p>
+<p>常见的下载方法有<sup>1</sup>：</p>
+<ol>
+<li><code>aspera</code> 工具下载</li>
+<li><code>wget</code>, <code>curl</code>命令直接下载</li>
+<li><code>NCBI</code>官方的 <code>SRA Toolkit</code> 进行下载</li>
+</ol>
+<p><code>aspera</code> 工具配置麻烦，直接下载容易出错，<del>所以使用<code>SRA-Toolkit</code>工具下载。(2024年04月27日)</del> <code>SRA-Toolkit</code>工具无断点续传，所以使用<code>srapath</code>获得地址后使用<code>axel</code>下载。</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="srapath获得地址后使用axel下载-2024年04月27日"><a href="#srapath获得地址后使用axel下载-2024年04月27日" class="headerlink" title="srapath获得地址后使用axel下载 (2024年04月27日)"></a><code>srapath</code>获得地址后使用<code>axel</code>下载 (2024年04月27日)</h3><p>本来其实<code>SRA-Toolkit</code>足够好用了，但是当下载的文件由2G变成20G, 一旦出现网络波动几个小时的工作量就会付之东流…</p>
+<p>所以还是万能的下载链接好使。</p>
+<p>大概意思如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">link</span>=$(srapath $(sed -n <span class="string">&quot;<span class="variable">$&#123;i&#125;</span>p&quot;</span> <span class="variable">$srr_acc_list_file</span>))</span><br><span class="line">axel -o <span class="variable">$filename</span> <span class="variable">$link</span> -k 32 &amp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-SRA-Toolkit-工具进行下载"><a href="#使用-SRA-Toolkit-工具进行下载" class="headerlink" title="使用 SRA-Toolkit 工具进行下载"></a>使用 SRA-Toolkit 工具进行下载</h3><h4 id="下载-SRA-Toolkit-工具并安装"><a href="#下载-SRA-Toolkit-工具并安装" class="headerlink" title="下载 SRA-Toolkit 工具并安装"></a>下载 SRA-Toolkit 工具并安装</h4><p>主要流程来源于官方教程及网络<sup>2-3</sup>.</p>
+<p>官方教程链接：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit">02. Installing SRA Toolkit · ncbi&#x2F;sra-tools Wiki · GitHub</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit">https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit</a></p>
+<p>以<code>CentOS</code>为例：</p>
+<ol>
+<li>下载<a target="_blank" rel="noopener" href="https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz">sratoolkit.current-centos_linux64.tar.gz</a>, 可以<code>wget</code>, 但推荐本地下载后传入。</li>
+<li>传入目标文件夹，如<code>/dev/sda1/home/tenney/app/sratoolkit/</code>, 并在终端中进入该地址，如<code>cd /dev/sda1/home/tenney/app/sratoolkit/</code>, 对文件解压，<code>tar -vxzf sratoolkit.tar.gz</code>, 注意<code>tar -vxzf</code>后的内容可能产生变化，以实际为准，比如我是<code>tar -vxzf  sratoolkit.current-centos_linux64.tar.gz</code>.</li>
+<li>将二进制文件的路径附加到<code>PATH</code>环境变量中，如：<code>export PATH=$PATH:$PWD/sratoolkit.3.0.5-centos_linux64/bin</code>.</li>
+<li>验证二进制文件是否可由shell找到：<code>which fastq-dump</code>.</li>
+<li>测试工具包是否有效：<code>fastq-dump --stdout -X 2 SRR390728</code>.</li>
+</ol>
+<p>永久添加环境变量可以写入<code>~/.bashrc</code>文件。</p>
+<p>完整代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /dev/sda1/home/tenney/app/sratoolkit/</span><br><span class="line">wget --output-document sratoolkit.tar.gz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz</span><br><span class="line">tar -vxzf  sratoolkit.current-centos_linux64.tar.gz</span><br><span class="line">export PATH=$PATH:$PWD/sratoolkit.3.0.5-centos_linux64/bin</span><br><span class="line">which fastq-dump</span><br><span class="line"># ~/app/sratoolkit/sratoolkit.3.0.5-centos_linux64/bin/fastq-dump</span><br><span class="line">fastq-dump --stdout -X 2 SRR390728</span><br></pre></td></tr></table></figure>
+
+<h4 id="prefetch-工具下载数据"><a href="#prefetch-工具下载数据" class="headerlink" title="prefetch 工具下载数据"></a>prefetch 工具下载数据</h4><p>提供<code>RUN</code>的<code>SRR</code>&#x2F;<code>DRR</code>&#x2F;<code>ERR</code>检索号即可下载，如<code>prefetch ERR009357</code>.</p>
+<p>也可以提供列表，以<code>\n</code>分隔。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cat SRR_Acc_List.txt</span><br><span class="line"># ERR003133</span><br><span class="line"># ERR003134</span><br><span class="line"># ERR003135</span><br><span class="line"># ERR003136</span><br><span class="line"># ERR003137</span><br><span class="line">echo $(&lt;SRR_Acc_List.txt)</span><br><span class="line"># SRR12697742 SRR12697743 SRR12697759 SRR12697758 SRR12697757 SRR12697756 SRR12697751 SRR12697750 SRR12697749 SRR12697748 SRR12697741 SRR12697740</span><br><span class="line">prefetch -O . $(&lt;SRR_Acc_List.txt)</span><br><span class="line"># 可以使用nohup + &amp;  用于放入后台下载，避免关闭终端导致下载中断</span><br><span class="line"># nohup prefetch -O . $(&lt;SRR_Acc_List.txt) &amp;</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>-O .</code>代表下载到当前文件夹，<code>$(&lt;SRR_Acc_List.txt)</code>代表读入的列表。</p>
+<h4 id="Aspera的下载和安装"><a href="#Aspera的下载和安装" class="headerlink" title="Aspera的下载和安装"></a>Aspera的下载和安装</h4><p>如果想获得更快的下载速度，就需要使用ibm-aspera软件。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/536866598">Aspera——利用SRR号批量高效下载FASTQ或SRA数据 - 知乎</a></p>
+<p>首先，在linux系统上，最推荐使用conda安装。</p>
+<p><code>conda install -c hcc aspera-cli</code></p>
+<p>如果使用全版本安装，可能会出现依赖包不匹配等问题，特别是最新版非常不推荐使用。</p>
+<p>测试运行代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ascp  -vQT -l 500m -P33001 -k 1 -i \</span><br><span class="line">~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">era-fasp@fasp.sra.ebi.ac.uk:/vol1/fastq/SRR122/079/SRR12207279/SRR12207279_1.fastq.gz  ./</span><br></pre></td></tr></table></figure>
+
+<h3 id="SRA数据转化为fastq文件"><a href="#SRA数据转化为fastq文件" class="headerlink" title="SRA数据转化为fastq文件"></a>SRA数据转化为fastq文件</h3><p>使用<code>SRA-Toolkit</code>中的<code>fastq-dump</code>工具将<code>SRA</code>数据转化为<code>fastq</code>文件。</p>
+<p>转换之前需要知道我们拿到的数据是单端还是双端数据<sup>4</sup>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 如果返回值是4，就是单端SE；如果返回值是8，那么就是双端PE。</span><br><span class="line">fastq-dump -X 1 --split-spot -Z SRR5489805.sra | wc -l</span><br><span class="line"></span><br><span class="line">#SE数据</span><br><span class="line">fastq-dump SRR15671203 -O ./</span><br><span class="line"></span><br><span class="line">#PE数据</span><br><span class="line">fastq-dump ERR009357.4 --split-3 -O ./</span><br></pre></td></tr></table></figure>
+
+<p>可以写一个批量脚本，输入文件在<code>/data/input</code>, 输出文件在<code>/data/output</code>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line"># 获取当前脚本所在目录，并输出</span><br><span class="line">SHELL_FOLDER=$(cd &quot;$(dirname &quot;$0&quot;)&quot;;pwd)</span><br><span class="line">echo $SHELL_FOLDER</span><br><span class="line"></span><br><span class="line"># 将当前脚本所在目录加上&quot;/data/input&quot;作为输入目录</span><br><span class="line">Input_Folder=$&#123;SHELL_FOLDER&#125;&quot;/data/input&quot;</span><br><span class="line"></span><br><span class="line">Output_Folder=$&#123;SHELL_FOLDER&#125;&quot;/data/output&quot;</span><br><span class="line">cd $Input_Folder</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:/dev/sda1/home/tenney/app/sratoolkit/sratoolkit.3.0.5-centos_linux64/bin</span><br><span class="line">while read line</span><br><span class="line">do</span><br><span class="line">  fastq-dump $line -O $Output_Folder</span><br><span class="line">done &lt; SRR_Acc_List.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>值得注意的是，一个<code>GSM编号</code>是可能对应多个<code>Run</code>(<code>SRR</code>) 的，应对的方法可以是分别qc和align，最后quantification的时候考虑合并<sup>5</sup>。</p>
+<blockquote>
+<p>简单来说，PRJNA相当于是一个project，里面可以有许多experiment（SRX）以及样品（SRS）,每个SRX可以有若干个Run（SRR）。你这3个Run应该分开qc和align，如果都没问题的话，最后quantification的时候可以合并。这样的好处是，如果里面有一个Run的数据不好，你可以知道并随时舍弃，而不会影响你最后的结果。</p>
+</blockquote>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/89024212">下载NCBI SRA数据的最佳方法 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit">02. Installing SRA Toolkit · ncbi&#x2F;sra-tools Wiki · GitHub</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/493358239?utm_id=0">下载NCBI的SRA数据 详细教程 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3fa77c52e507">SRA数据 (2)——SRA数据处理 - 简书</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/452513885">为什么GEO数据库里一个样本会对应多个SRR文件？ - 知乎</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://yeyeziblog.eu.org">Yezi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://yeyeziblog.eu.org/2023/05/23/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE/">https://yeyeziblog.eu.org/2023/05/23/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/GEO/">GEO</a><a class="post-meta__tags" href="/tags/SRA/">SRA</a></div><div class="post_share"><div class="social-share" data-image="/img/SRA-Toolkit%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BDSRA%E6%95%B0%E6%8D%AE_2023-05-24-20-29-20.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/23/Tech/%E5%8F%B6%E5%AD%90%E7%9A%84%E6%8E%A8%E8%8D%90%E5%B0%8F%E8%BD%AF%E4%BB%B6/RIME%E5%AE%8C%E5%85%A8%E5%8F%AF%E6%8E%A7%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%96%E7%95%8C/" title="​RIME/Squirrel - 完全可控的输入世界"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">​RIME/Squirrel - 完全可控的输入世界</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/23/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/GEO/GEOparse%20-%20%E5%88%A9%E7%94%A8Python%E5%A4%84%E7%90%86%E4%B8%8B%E8%BD%BD%E5%A4%84%E7%90%86GEO%E6%95%B0%E6%8D%AE/" title="GEOparse - 利用Python处理下载处理GEO数据"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">GEOparse - 利用Python处理下载处理GEO数据</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yezi</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">152</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">91</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">42</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sandy9707"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#srapath%E8%8E%B7%E5%BE%97%E5%9C%B0%E5%9D%80%E5%90%8E%E4%BD%BF%E7%94%A8axel%E4%B8%8B%E8%BD%BD-2024%E5%B9%B404%E6%9C%8827%E6%97%A5"><span class="toc-number">2.1.</span> <span class="toc-text">srapath获得地址后使用axel下载 (2024年04月27日)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-SRA-Toolkit-%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.2.</span> <span class="toc-text">使用 SRA-Toolkit 工具进行下载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-SRA-Toolkit-%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.1.</span> <span class="toc-text">下载 SRA-Toolkit 工具并安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#prefetch-%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.2.</span> <span class="toc-text">prefetch 工具下载数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Aspera%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.3.</span> <span class="toc-text">Aspera的下载和安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SRA%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%8C%96%E4%B8%BAfastq%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">SRA数据转化为fastq文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">引用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/02/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/R/rserver%E4%B8%AD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8conda/" title="rserver 中无法使用 conda 的解决办法"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rserver 中无法使用 conda 的解决办法"/></a><div class="content"><a class="title" href="/2024/11/02/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/R/rserver%E4%B8%AD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8conda/" title="rserver 中无法使用 conda 的解决办法">rserver 中无法使用 conda 的解决办法</a><time datetime="2024-11-02T12:28:59.000Z" title="Created 2024-11-02 20:28:59">2024-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/02/%E6%9D%82%E8%B0%88/%E5%90%8C%E4%BA%BA%E6%96%87/%E8%B5%B0%E8%BF%9B%E4%BF%AE%E4%BB%992024%E5%90%8C%E4%BA%BA%E6%B4%BB%E5%8A%A8/" title="走进修仙 2024 同人活动"><img src="/img/%E8%B5%B0%E8%BF%9B%E4%BF%AE%E4%BB%99.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="走进修仙 2024 同人活动"/></a><div class="content"><a class="title" href="/2024/11/02/%E6%9D%82%E8%B0%88/%E5%90%8C%E4%BA%BA%E6%96%87/%E8%B5%B0%E8%BF%9B%E4%BF%AE%E4%BB%992024%E5%90%8C%E4%BA%BA%E6%B4%BB%E5%8A%A8/" title="走进修仙 2024 同人活动">走进修仙 2024 同人活动</a><time datetime="2024-11-02T04:12:00.000Z" title="Created 2024-11-02 12:12:00">2024-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/01/Tech/Linux/%E5%AE%89%E8%A3%85nvidia-container-toolkit%E4%BB%A5%E6%94%AF%E6%8C%81docker%E4%BD%BF%E7%94%A8%E6%98%BE%E5%8D%A1/" title="安装 nvidia-container-toolkit 以支持 docker 使用显卡"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安装 nvidia-container-toolkit 以支持 docker 使用显卡"/></a><div class="content"><a class="title" href="/2024/11/01/Tech/Linux/%E5%AE%89%E8%A3%85nvidia-container-toolkit%E4%BB%A5%E6%94%AF%E6%8C%81docker%E4%BD%BF%E7%94%A8%E6%98%BE%E5%8D%A1/" title="安装 nvidia-container-toolkit 以支持 docker 使用显卡">安装 nvidia-container-toolkit 以支持 docker 使用显卡</a><time datetime="2024-11-01T01:47:45.000Z" title="Created 2024-11-01 09:47:45">2024-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/29/Tech/%E5%8F%B6%E5%AD%90%E7%9A%84%E6%8E%A8%E8%8D%90%E5%B0%8F%E8%BD%AF%E4%BB%B6/%E7%BA%AF%E5%9B%BEppt%E7%9A%84%E4%BC%98%E5%8A%BF%E5%92%8C%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95/" title="纯图 ppt 的优势和转换方法"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="纯图 ppt 的优势和转换方法"/></a><div class="content"><a class="title" href="/2024/10/29/Tech/%E5%8F%B6%E5%AD%90%E7%9A%84%E6%8E%A8%E8%8D%90%E5%B0%8F%E8%BD%AF%E4%BB%B6/%E7%BA%AF%E5%9B%BEppt%E7%9A%84%E4%BC%98%E5%8A%BF%E5%92%8C%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95/" title="纯图 ppt 的优势和转换方法">纯图 ppt 的优势和转换方法</a><time datetime="2024-10-29T14:09:48.000Z" title="Created 2024-10-29 22:09:48">2024-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/25/Tech/Linux/centos%E4%BD%BF%E7%94%A8telnet%E8%BF%9E%E6%8E%A5/" title="centos 使用 telnet 连接"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="centos 使用 telnet 连接"/></a><div class="content"><a class="title" href="/2024/10/25/Tech/Linux/centos%E4%BD%BF%E7%94%A8telnet%E8%BF%9E%E6%8E%A5/" title="centos 使用 telnet 连接">centos 使用 telnet 连接</a><time datetime="2024-10-25T11:23:16.000Z" title="Created 2024-10-25 19:23:16">2024-10-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Yezi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'a1ca824ebb41b4570f94',
+      clientSecret: '48b6c61bc875bb16f99774f4a271005632d6400a',
+      repo: 'Yeziblog-Comments',
+      owner: 'sandy9707',
+      admin: ['sandy9707'],
+      id: 'ea7f5b1bd3a6712fd0ee9bba0735c5a0',
+      updateCountCallback: commentCount
+    },))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div></body></html>
