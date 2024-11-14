@@ -182,8 +182,12 @@
 <li>Agent 选择 <code>CodeActAgent</code></li>
 <li>Security Analyzer (Optional) 选择 <code>None</code></li>
 </ol>
+<p>实际体验中发现他会自动调用网页浏览器来获取信息，所以建议网络设置成 host 而不是 bridge。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --pull=always \</span><br><span class="line">    --network host \</span><br><span class="line">    -e SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.13-nikolaik \</span><br><span class="line">    -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">    -e LOG_ALL_EVENTS=<span class="literal">true</span> \</span><br><span class="line">    --add-host host.docker.internal:host-gateway \</span><br><span class="line">    --name openhands-app \</span><br><span class="line">    docker.all-hands.dev/all-hands-ai/openhands:0.13</span><br></pre></td></tr></table></figure>
+
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>成功是成功了，但是效果只能说一般，首先是运行太慢，其次是生成代码的效果一般。</p>
 <p>我先后使用了 7b 和 32b，7b 是直接无法做到对于工作区的操作，32b 的效果要好一些，但是依然效果非常有限。</p>
+<p>所以最终还是选择了 openrouter.ai 的 <code>claude-3-5-sonnet-20241022</code> api 来完成任务。</p>
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://github.com/All-Hands-AI/OpenHands">GitHub - All-Hands-AI&#x2F;OpenHands: 🙌 OpenHands: Code Less, Make More</a></li>
 <li><a target="_blank" rel="noopener" href="https://docs.all-hands.dev/zh-Hans/modules/usage/llms">🤖 LLM 后端 | OpenHands</a></li>
