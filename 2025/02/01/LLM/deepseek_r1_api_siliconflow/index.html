@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DeepSeek 开源大模型：技术优势、市场影响与使用实践 | Yezi's Hexo Blog</title><meta name="author" content="Yezi"><meta name="copyright" content="Yezi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="引言在人工智能的浪潮中，DeepSeek 的 R1 模型以其强大的性能和独特的技术架构，迅速在全球 AI 领域崭露头角，甚至被誉为国产大模型的“技术奇点”。那么，DeepSeek 究竟是如何炼成的？它能做什么？我们又该如何利用它呢？ DeepSeek 的优势、影响力与市场地位DeepSeek R1 模型在技术领域的表现堪称卓越，尤其是在高难度提示词处理、代码生成和数学推理等复杂任务中，其能力远超同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DeepSeek 开源大模型：技术优势、市场影响与使用实践">
+<meta property="og:url" content="https://blog.yeyeziblog.eu.org/2025/02/01/LLM/deepseek_r1_api_siliconflow/index.html">
+<meta property="og:site_name" content="Yezi&#39;s Hexo Blog">
+<meta property="og:description" content="引言在人工智能的浪潮中，DeepSeek 的 R1 模型以其强大的性能和独特的技术架构，迅速在全球 AI 领域崭露头角，甚至被誉为国产大模型的“技术奇点”。那么，DeepSeek 究竟是如何炼成的？它能做什么？我们又该如何利用它呢？ DeepSeek 的优势、影响力与市场地位DeepSeek R1 模型在技术领域的表现堪称卓越，尤其是在高难度提示词处理、代码生成和数学推理等复杂任务中，其能力远超同">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog.yeyeziblog.eu.org/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg">
+<meta property="article:published_time" content="2025-02-01T15:59:58.000Z">
+<meta property="article:modified_time" content="2025-02-01T15:59:58.000Z">
+<meta property="article:author" content="Yezi">
+<meta property="article:tag" content="deepseek">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.yeyeziblog.eu.org/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.yeyeziblog.eu.org/2025/02/01/LLM/deepseek_r1_api_siliconflow/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2155310374265743" crossorigin="anonymous"></script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"74HMPRFIN5","apiKey":"896979d16b9d8fcb17ef98c222d6d40a","indexName":"yeziblog","hits":{"per_page":10},"languages":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DeepSeek 开源大模型：技术优势、市场影响与使用实践',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-01 23:59:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">166</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">103</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">46</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Yezi's Hexo Blog"><span class="site-name">Yezi's Hexo Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">DeepSeek 开源大模型：技术优势、市场影响与使用实践</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-02-01T15:59:58.000Z" title="Created 2025-02-01 23:59:58">2025-02-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-02-01T15:59:58.000Z" title="Updated 2025-02-01 23:59:58">2025-02-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/LLM/">LLM</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="DeepSeek 开源大模型：技术优势、市场影响与使用实践"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在人工智能的浪潮中，DeepSeek 的 R1 模型以其强大的性能和独特的技术架构，迅速在全球 AI 领域崭露头角，甚至被誉为国产大模型的“技术奇点”。那么，DeepSeek 究竟是如何炼成的？它能做什么？我们又该如何利用它呢？</p>
+<h2 id="DeepSeek-的优势、影响力与市场地位"><a href="#DeepSeek-的优势、影响力与市场地位" class="headerlink" title="DeepSeek 的优势、影响力与市场地位"></a>DeepSeek 的优势、影响力与市场地位</h2><p>DeepSeek R1 模型在技术领域的表现堪称卓越，尤其是在高难度提示词处理、代码生成和数学推理等复杂任务中，其能力远超同类产品。令人瞩目的是，训练这样一款顶尖模型仅需 2048 块 H800 显卡和 600 万美元的成本，这一数字仅为国际同行的 1&#x2F;18，展现了极高的效率与性价比。</p>
+<p>然而，DeepSeek 的火爆并不仅仅源于其技术实力，其独特之处在于两点：</p>
+<ol>
+<li>开源策略</li>
+<li>低算力需求</li>
+</ol>
+<p>DeepSeek 的成功可以说是开源精神的胜利。它的工具源于开源社区，最终又回馈于开源社区。开源不仅让开发者能够站在巨人的肩膀上，也为后来者提供了攀登的阶梯。通过开源，更多开发者可以参与到模型的微调与训练中，从而推动技术的不断进步。而低算力需求则让这一技术更易于普及，真正惠及大众。正如电灯的发明改变了人类生活，技术的伟大在于其普世价值。至于 DeepSeek 对市场的冲击，从英伟达股价下跌 17%、市值蒸发约 5900 亿美元的数据中可见一斑。</p>
+<p>关于开源，梁文锋有一段访谈发言让我很受感动[3]:</p>
+<blockquote>
+<p>暗涌：但你们究竟是一个商业组织，而非一个公益科研机构，选择创新，又通过开源分享出去，那要在哪里形成护城河？像 2024 年 5 月这次 MLA 架构的创新，也会很快被其他家 copy 吧？</p>
+<p>梁文锋：<strong>在颠覆性的技术面前，闭源形成的护城河是短暂的</strong>。即使 OpenAI 闭源，也无法阻止被别人赶超。所以我们把价值沉淀在团队上，我们的同事在这个过程中得到成长，积累很多 know-how, 形成可以创新的组织和文化，就是我们的护城河。</p>
+</blockquote>
+<p>此外，DeepSeek 还有一个不可忽视的亮点：它是国产 AI 的杰出代表。它打破了美国在 AI 领域的绝对领先地位，并对 GPT、Claude、Gemini 等严格封锁政策进行了有力回击（尽管部分原因是服务器宕机，但至少让美国也体验了一把被“封锁”的感觉，笑）。</p>
+<h2 id="DeepSeek-和幻方，和老板，和员工构成"><a href="#DeepSeek-和幻方，和老板，和员工构成" class="headerlink" title="DeepSeek 和幻方，和老板，和员工构成"></a>DeepSeek 和幻方，和老板，和员工构成</h2><p>DeepSeek 能够在当下这个时间点崛起，与其历史背景密不可分。</p>
+<p>DeepSeek 由梁文锋创立，而梁文锋此前也是幻方量化的创始人。幻方量化成立于 2015 年，最初是一家专注于利用 AI 进行投资的对冲基金。</p>
+<p>2023 年，DeepSeek 作为一家独立公司成立，专注于大模型技术的开发，而梁文锋持有约 83.37% 的股份，是公司的主要控制者。</p>
+<p>DeepSeek 与其他公司最大的不同就是员工构成方面：</p>
+<p>员工人数不足 140 人，与 OpenAI 等大型竞争对手相比，规模仅为后者的 10%。主要招聘来自中国顶尖高校（如北大、清华等）的应届毕业生和博士生，注重培养本土人才，而非依赖海外专家。不看业绩，没有任务，没有 kpi, 只有向最难的问题创新。</p>
+<blockquote>
+<p>暗涌：但你们不参与融资，很少对外发声，社会声量上肯定不如那些融资活跃的公司，怎么确保 DeepSeek 就是做大模型的人的首选？</p>
+<p>梁文锋：因为我们在做最难的事。对顶级人才吸引最大的，肯定是去解决世界上最难的问题。其实，顶尖人才在中国是被低估的。因为整个社会层面的硬核创新太少了，使得他们没有机会被识别出来。我们在做最难的事，对他们就是有吸引力的。</p>
+</blockquote>
+<blockquote>
+<p>暗涌：这种发散性灵感的诞生和你们完全创新型组织的架构很有关系。幻方时代，你们就很少自上而下地指派目标或任务。但 AGI 这种充满不确定性的前沿探索，是否多了管理动作？</p>
+<p>梁文锋：DeepSeek 也全是自下而上。而且我们一般不前置分工，而是自然分工。每个人有自己独特的成长经历，都是自带想法的，不需要 push 他。探索过程中，他遇到问题，自己就会拉人讨论。不过当一个 idea 显示出潜力，我们也会自上而下地去调配资源。</p>
+</blockquote>
+<p>待遇方面，DeepSeek 对员工的薪酬相对优厚，采取“一年 14 薪”的模式。核心岗位的薪资可达月薪 11 万元人民币，年薪超过百万。此外，公司还提供实习机会，日薪为 500 元，并有转正名额。</p>
+<h2 id="DeepSeek-的使用方法"><a href="#DeepSeek-的使用方法" class="headerlink" title="DeepSeek 的使用方法"></a>DeepSeek 的使用方法</h2><h3 id="网页使用"><a href="#网页使用" class="headerlink" title="网页使用"></a>网页使用</h3><p>接下来介绍 DeepSeek 最核心的功能：</p>
+<p>“深度思考”和联网搜索。</p>
+<ol>
+<li>深度思考：用户只需选中输入框下的按钮，就能使模型获得思考能力并在思考后作答。这一功能可以让 ai 理解复杂内容，特别适合学术研究、新闻阅读或技术文档分析等场景，并极大增强了回答准确性和可用性。</li>
+<li>联网搜索：DeepSeek V2.5 版本新增了联网搜索功能，能够从网络信息中提取数据并进行分析，提供更全面、个性化的答案。</li>
+</ol>
+<p>这两项功能在用户体验上表现非常出色，既准确又高效。然而，最近 DeepSeek 的深度思考和联网搜索功能都出现了无法使用的情况。用户在尝试时会收到“由于技术原因，联网搜索暂不可用”或“服务器繁忙，请稍后再试”的提示。</p>
+<p>总的来说，尽管 DeepSeek 提供了强大的工具和功能，但目前的技术问题确实影响了用户体验。希望未来能尽快解决这些问题，恢复其高效的服务。</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>简单来说，API 是一种接口。你传入一些内容，它就会返回相应的结果。通过这项技术，开发者可以轻松在自己的应用中集成自然语言处理（NLP）、自然语言理解（NLU）和自然语言生成（NLG）等功能，而不需要深入了解模型背后的复杂结构或训练过程。</p>
+<p>如果你关注过 LLM 领域，可能还记得 DeepSeek 上一次火爆的原因——它便宜。没错，它真的很便宜。据梁文锋透露，他们只是定了一个能回本的价格，结果却引发了大模型行业的价格战。这无疑是一件值得高兴的事。</p>
+<p>然而，目前官方的 API 几乎处于不可用的状态。</p>
+<h3 id="硅基流动-SiliconFlow"><a href="#硅基流动-SiliconFlow" class="headerlink" title="硅基流动 (SiliconFlow)"></a>硅基流动 (SiliconFlow)</h3><p>市面上有不少可用的 API 供应商，比如 Azure、Groq，甚至英伟达。而硅基流动不仅稳定高效，还基于国产卡部署[1]，尤其适合国内用户。</p>
+<p>那么，硅基流动的 DeepSeek API 有什么特别之处呢？以下几个理由可能会让你觉得它是个不错的选择：</p>
+<ol>
+<li><strong>免费额度</strong></li>
+</ol>
+<p>如果你是第一次接触 DeepSeek R1 API，完全不用担心费用问题。硅基流动为新用户提供了免费的 API 使用额度，让你可以零风险地体验，看看它是否适合你的项目。</p>
+<ol start="2">
+<li><strong>部署在国产卡上，稳定又安全</strong></li>
+</ol>
+<p>硅基流动的 DeepSeek R1 API 部署在国产卡上，这意味着它能为国内用户提供更低的延迟和更高的稳定性，避免了跨境数据传输带来的额外延迟。同时，国产卡的部署也确保了数据安全，完全符合国内的合规要求。</p>
+<ol start="3">
+<li><strong>支持 DeepSeek R1 和 V3 版本</strong></li>
+</ol>
+<p>不同版本的 API 提供了不同的功能和优化。硅基流动同时支持 R1 和 V3 版本，无论是新手还是经验丰富的开发者，都能找到适合自己的接口来解决需求。</p>
+<p>事实上，SiliconFlow 也确实是官方以外价格最低的供应商了。</p>
+<p>想要体验 DeepSeek R1 API？其实非常简单：</p>
+<ol>
+<li>点击下方的链接，注册账号。</li>
+<li>获取你的 API 密钥。</li>
+<li>按照文档集成 API，开始使用！</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://cloud.siliconflow.cn/i/jtaKtZMM" title="立即注册并获得免费额度">立即注册并获得免费额度</a></p>
+<p>我的邀请码是<code>jtaKtZMM</code></p>
+<p><img src="https://files.mdnice.com/user/41398/0146c235-c552-425f-b7b3-32fa8c6145e3.png" alt="邀请码 jtaKtZMM"></p>
+<p>基于 SiliconCloud 活动，使用邀请码作为新用户完成 SiliconCloud 账号注册，可立刻获得 2000 万 Tokens。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>不得不说失去 r1+ 搜索的组合让我非常不适应，很多原来可以”提问”的内容现在必须自己去搜索。我可以很负责任的说，chatgpt 和 perplexiai 的联网搜索不如 deepseek 远矣，希望大家之后尽量去用一用。</p>
+<p>最后，祝大家新年快乐，恭喜发财~</p>
+<h2 id="篇外"><a href="#篇外" class="headerlink" title="篇外"></a>篇外</h2><h3 id="api-使用方法-1"><a href="#api-使用方法-1" class="headerlink" title="api 使用方法[1]"></a>api 使用方法[1]</h3><p>如果你想直接在客户端应用里体验 DeepSeek-R1 &amp; V3 模型，可在本地安装以下产品，接入 SiliconCloud 的 API 后（可自定义添加这两款模型），即可体验 DeepSeek-R1 &amp; V3。</p>
+<p>大模型客户端应用：ChatBox、Cherry Studio、OneAPI、LobeChat、NextChat</p>
+<p>代码生成应用：Cursor、Windsurf、Cline</p>
+<p>大模型应用开发平台：Dify</p>
+<p>AI 知识库：Obsidian AI、FastGPT</p>
+<p>翻译插件：沉浸式翻译、欧路词典</p>
+<p>更多场景与应用案例接入教程可参考：<a target="_blank" rel="noopener" href="https://docs.siliconflow.cn/usercases/awesome-user-cases">https://docs.siliconflow.cn/usercases/awesome-user-cases</a></p>
+<h3 id="Token-工厂-SiliconCloud-Qwen2-5（7B）等-20-模型免费用-1"><a href="#Token-工厂-SiliconCloud-Qwen2-5（7B）等-20-模型免费用-1" class="headerlink" title="Token 工厂 SiliconCloud Qwen2.5（7B）等 20+ 模型免费用[1]"></a>Token 工厂 SiliconCloud Qwen2.5（7B）等 20+ 模型免费用[1]</h3><p>作为一站式大模型云服务平台，SiliconCloud 致力于为开发者提供极速响应、价格亲民、品类齐全、体验丝滑的模型 API。</p>
+<p>除了 DeepSeek-R1、DeepSeek-V3，SiliconCloud 已上架包括 Janus-Pro-7B、CosyVoice2、QVQ-72B-Preview、DeepSeek-VL2、DeepSeek-V2.5-1210、Llama-3.3-70B-Instruct、HunyuanVideo、fish-speech-1.5、Qwen2.5-7B&#x2F;14B&#x2F;32B&#x2F;72B、FLUX.1、InternLM2.5-20B-Chat、BCE、BGE、SenseVoice-Small、GLM-4-9B-Chat 在内的数十种开源大语言模型、图片&#x2F;视频生成模型、语音模型、代码&#x2F;数学模型以及向量与重排序模型。平台支持开发者自由对比、组合各种模态的大模型，为你的生成式 AI 应用选择最佳实践。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/9AC5W4SjdWyFypnl3TBdUg">首发！硅基流动 x 华为云联合推出基于昇腾云的 DeepSeek R1 &amp; V3 推理服务！</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20413147739" title="DeepSeek-R1 发布是 AI 发展的一个重大转折">DeepSeek-R1 发布是 AI 发展的一个重大转折</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/17880095067" title="DeepSeek 创始人专访：中国的 AI 不可能永远跟随，需要有人站到技术的前沿">DeepSeek 创始人专访：中国的 AI 不可能永远跟随，需要有人站到技术的前沿</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.yeyeziblog.eu.org">Yezi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.yeyeziblog.eu.org/2025/02/01/LLM/deepseek_r1_api_siliconflow/">https://blog.yeyeziblog.eu.org/2025/02/01/LLM/deepseek_r1_api_siliconflow/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/deepseek/">deepseek</a></div><div class="post_share"><div class="social-share" data-image="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/12/29/%E6%9D%82%E8%B0%88/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2024%E5%B9%B4%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2024 年年终总结"><img class="cover" src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">2024 年年终总结</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yezi</div><div class="author-info__description">Lev's Data Technology Column</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">166</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">103</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">46</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sandy9707"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DeepSeek-%E7%9A%84%E4%BC%98%E5%8A%BF%E3%80%81%E5%BD%B1%E5%93%8D%E5%8A%9B%E4%B8%8E%E5%B8%82%E5%9C%BA%E5%9C%B0%E4%BD%8D"><span class="toc-number">2.</span> <span class="toc-text">DeepSeek 的优势、影响力与市场地位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DeepSeek-%E5%92%8C%E5%B9%BB%E6%96%B9%EF%BC%8C%E5%92%8C%E8%80%81%E6%9D%BF%EF%BC%8C%E5%92%8C%E5%91%98%E5%B7%A5%E6%9E%84%E6%88%90"><span class="toc-number">3.</span> <span class="toc-text">DeepSeek 和幻方，和老板，和员工构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DeepSeek-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">DeepSeek 的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E4%BD%BF%E7%94%A8"><span class="toc-number">4.1.</span> <span class="toc-text">网页使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">4.2.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%85%E5%9F%BA%E6%B5%81%E5%8A%A8-SiliconFlow"><span class="toc-number">4.3.</span> <span class="toc-text">硅基流动 (SiliconFlow)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AF%87%E5%A4%96"><span class="toc-number">6.</span> <span class="toc-text">篇外</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#api-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="toc-number">6.1.</span> <span class="toc-text">api 使用方法[1]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Token-%E5%B7%A5%E5%8E%82-SiliconCloud-Qwen2-5%EF%BC%887B%EF%BC%89%E7%AD%89-20-%E6%A8%A1%E5%9E%8B%E5%85%8D%E8%B4%B9%E7%94%A8-1"><span class="toc-number">6.2.</span> <span class="toc-text">Token 工厂 SiliconCloud Qwen2.5（7B）等 20+ 模型免费用[1]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">引用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/02/01/LLM/deepseek_r1_api_siliconflow/" title="DeepSeek 开源大模型：技术优势、市场影响与使用实践"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DeepSeek 开源大模型：技术优势、市场影响与使用实践"/></a><div class="content"><a class="title" href="/2025/02/01/LLM/deepseek_r1_api_siliconflow/" title="DeepSeek 开源大模型：技术优势、市场影响与使用实践">DeepSeek 开源大模型：技术优势、市场影响与使用实践</a><time datetime="2025-02-01T15:59:58.000Z" title="Created 2025-02-01 23:59:58">2025-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/29/%E6%9D%82%E8%B0%88/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2024%E5%B9%B4%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2024 年年终总结"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2024 年年终总结"/></a><div class="content"><a class="title" href="/2024/12/29/%E6%9D%82%E8%B0%88/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2024%E5%B9%B4%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2024 年年终总结">2024 年年终总结</a><time datetime="2024-12-29T14:04:13.981Z" title="Created 2024-12-29 22:04:13">2024-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/28/Tech/MacOS/mac%E8%87%AA%E5%B8%A6python3%E8%A3%85%E5%8C%85%E6%97%A0%E6%9D%83%E9%99%90%E8%A7%A3%E5%86%B3/" title="mac 自带 python3 装包无权限解决"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mac 自带 python3 装包无权限解决"/></a><div class="content"><a class="title" href="/2024/12/28/Tech/MacOS/mac%E8%87%AA%E5%B8%A6python3%E8%A3%85%E5%8C%85%E6%97%A0%E6%9D%83%E9%99%90%E8%A7%A3%E5%86%B3/" title="mac 自带 python3 装包无权限解决">mac 自带 python3 装包无权限解决</a><time datetime="2024-12-28T09:14:55.224Z" title="Created 2024-12-28 17:14:55">2024-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/27/Tech/WebDevelopment/uniapp_dev/" title="uniapp 开发"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="uniapp 开发"/></a><div class="content"><a class="title" href="/2024/12/27/Tech/WebDevelopment/uniapp_dev/" title="uniapp 开发">uniapp 开发</a><time datetime="2024-12-27T11:00:34.316Z" title="Created 2024-12-27 19:00:34">2024-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/12/Tech/WebDevelopment/FlutterLearning/" title="Flutter 学习笔记"><img src="/img/%E5%8F%B6%E5%AD%90%E7%9A%84%E7%A5%9E%E5%A5%87%E5%B0%8F%E8%BD%AF%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Flutter 学习笔记"/></a><div class="content"><a class="title" href="/2024/12/12/Tech/WebDevelopment/FlutterLearning/" title="Flutter 学习笔记">Flutter 学习笔记</a><time datetime="2024-12-12T09:49:47.122Z" title="Created 2024-12-12 17:49:47">2024-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Yezi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'a1ca824ebb41b4570f94',
+      clientSecret: '48b6c61bc875bb16f99774f4a271005632d6400a',
+      repo: 'Yeziblog-Comments',
+      owner: 'sandy9707',
+      admin: ['sandy9707'],
+      id: 'af412889e1641d3d2122ea910aa9c838',
+      updateCountCallback: commentCount
+    },))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div></body></html>
